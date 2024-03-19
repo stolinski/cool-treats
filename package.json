@@ -1,0 +1,19 @@
+{
+  "name": "cool-treats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pnpm vite dev",
+    "dev": "pnpm vite dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.0.10",
+    "vite-plugin-list-directory-contents": "^1.4.5"
+  }
+}
