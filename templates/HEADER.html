@@ -1,15 +1,28 @@
-<header>
-  <a href="/demos">Back to demos</a>
-  <a
-    target="_blank"
-    href="https://github.com/stolinski/cool-treats/tree/main/demos"
-    >Checkout the code</a
-  >
+<header class="layout">
+  <div>
+    <a href="/demos">⬅︎ Back to demos</a>
+    <a
+      target="_blank"
+      href="https://github.com/stolinski/cool-treats/tree/main/demos"
+      >Checkout the code</a
+    >
+  </div>
 </header>
 
 <style>
-  header {
+  header > div {
     display: flex;
     justify-content: space-between;
+    padding: 10px;
+    a {
+      color: var(--fg);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  header {
+    border-bottom: 1px solid rgb(255 255 255 / 0.1);
   }
 </style>

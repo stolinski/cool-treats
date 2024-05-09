@@ -13,9 +13,9 @@ let r = 6;
 let speed = 6;
 
 function setup() {
-  createCanvas(710, 400);
+  createCanvas(910, 400);
 
-  fill(128);
+  fill(1008);
   base1 = createVector(0, height - 150);
   base2 = createVector(width, height);
   //createGround();
