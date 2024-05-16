@@ -1,13 +1,16 @@
 <style>
   :root {
     --black: #101010;
-    --white: white;
+    --white: #eeeeee;
+    --dark-grey: #222222;
+    --grey: #bebebe;
     --bg: var(--black);
-    --fg: var(--white);
-    /* Base Vertical Spacing */
-    --space: 1.62;
+    --bg-tint: var(--dark-grey);
 
-    /* Vertical Spacing - multiplier */
+    --fg: var(--white);
+    --fg-shade: var(--grey);
+
+    --space: 1.62;
     --vspace: calc(var(--space) * 1rem);
     --vspace-0: calc(3 * var(--space) * 1rem);
     --vspace-1: calc(2 * var(--space) * 1rem);
@@ -23,73 +26,74 @@
     --text-size-heading-l: clamp(2.44rem, 2.38vw + 1.85rem, 3rem);
     --text-size-heading-xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
-    p {
-      line-height: var(--vspace);
-    }
+    --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),
+      0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),
+      0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
+  }
 
-    h1 {
-      color: var(--deep-shade);
-      margin: var(--vspace-1) 0 var(--vspace-1) 0;
-      line-height: calc(8 / var(--space) * var(--vspace));
-    }
+  p {
+    line-height: var(--vspace);
+  }
 
-    h2 {
-      margin: var(--vspace-2) 0 var(--vspace-3) 0;
-      line-height: 1em;
-    }
+  h1 {
+    color: var(--deep-shade);
+    margin: var(--vspace-1) 0 var(--vspace-1) 0;
+    line-height: calc(8 / var(--space) * var(--vspace));
+  }
 
-    h3 {
-      margin: var(--vspace-1) 0 var(--vspace-3) 0;
-      line-height: 1em;
-    }
+  h2 {
+    margin: var(--vspace-2) 0 var(--vspace-3) 0;
+    line-height: 1em;
+  }
 
-    h4,
-    h5,
-    h6 {
-      margin: var(--vspace-2) 0 var(--vspace-3) 0;
-      line-height: var(--vspace);
-    }
+  h3 {
+    margin: var(--vspace-1) 0 var(--vspace-3) 0;
+    line-height: 1em;
+  }
 
-    .bigtitle,
-    h1 {
-      font-size: var(--text-size-heading-l);
-    }
+  h4,
+  h5,
+  h6 {
+    margin: var(--vspace-2) 0 var(--vspace-3) 0;
+    line-height: var(--vspace);
+  }
 
-    .title,
-    h2 {
-      font-size: var(--text-size-heading-m);
-    }
+  .bigtitle,
+  h1 {
+    font-size: var(--text-size-heading-l);
+  }
 
-    .subheading1,
-    h3 {
-      font-size: var(--text-size-heading-s);
-      font-weight: normal;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
+  .title,
+  h2 {
+    font-size: var(--text-size-heading-m);
+  }
 
-    blockquote {
-      font-size: 1em;
-      font-style: italic;
-      line-height: calc(1 * var(--vspace));
-      margin: var(--vspace-2) var(--vspace-2);
-    }
+  .subheading1,
+  h3 {
+    font-size: var(--text-size-heading-s);
+  }
 
-    .subheading2,
-    h4 {
-      font-size: var(--text-size-heading-xs);
-    }
+  blockquote {
+    font-size: 1em;
+    font-style: italic;
+    line-height: calc(1 * var(--vspace));
+    margin: var(--vspace-2) var(--vspace-2);
+  }
 
-    .subheading3,
-    h5 {
-      font-size: var(--text-size-p);
-      letter-spacing: 0.15em;
-    }
+  .subheading2,
+  h4 {
+    font-size: var(--text-size-heading-xs);
+  }
 
-    .subheading4,
-    h6 {
-      font-size: var(--text-size-s);
-    }
+  .subheading3,
+  h5 {
+    font-size: var(--text-size-p);
+    letter-spacing: 0.15em;
+  }
+
+  .subheading4,
+  h6 {
+    font-size: var(--text-size-s);
   }
 
   body {
@@ -100,10 +104,20 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
       sans-serif;
+    tab-size: 20px;
   }
 
   .readable {
     max-width: 900px;
+    width: 100%;
+  }
+
+  .readable-center {
+    margin-inline: auto;
+  }
+
+  .readable-code {
+    max-width: 1100px;
     width: 100%;
   }
 
@@ -166,5 +180,27 @@
   .main {
     width: 100%;
     grid-column: main / main;
+  }
+
+  button {
+    background: #363636;
+    border: none;
+    border-radius: 4px;
+    color: var(--fg);
+    box-shadow: var(--input-shadow);
+    line-height: 2.3;
+    padding-inline: 10px;
+  }
+
+  .shiki {
+    border-radius: 4px;
+    border: solid 1px var(--bg-tint);
+    font-size: var(--text-size-p);
+    padding: 20px;
+    box-shadow: var(--input-shadow);
+    overflow-x: auto;
+  }
+  .shiki .line {
+    line-height: 1.5;
   }
 </style>
